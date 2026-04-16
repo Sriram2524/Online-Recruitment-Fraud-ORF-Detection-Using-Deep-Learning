@@ -118,7 +118,15 @@ def delete_history(id):
         flash('History record deleted.', 'info')
     return redirect(url_for('home'))
 
-if __name__ == '__main__':
+'''if __name__ == '__main__':
     with app.app_context():
         db.create_all() # This creates the new SearchHistory table
     app.run(debug=True, host="0.0.0.0", port=5000)
+    '''
+
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()  # Creates tables
+
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
