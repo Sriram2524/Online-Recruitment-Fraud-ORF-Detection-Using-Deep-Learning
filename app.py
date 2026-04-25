@@ -8,6 +8,11 @@ import os
 from datetime import datetime, timedelta
 
 from flask_sqlalchemy import SQLAlchemy
+#from transformers import pipeline
+
+
+# load once globally
+#classifier = pipeline("text-classification")
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_super_secret_key_123'
@@ -57,6 +62,21 @@ def predict(text):
     predicted_class = torch.argmax(logits, dim=1).item()
     return "Fake Job 🚨" if predicted_class == 1 else "Real Job ✅"
 
+
+
+
+
+'''def predict(text):
+    result = classifier(text)[0]
+    
+    # result example: {'label': 'LABEL_1', 'score': 0.98}
+    label = result['label']
+    
+    if label == 'LABEL_1':
+        return "Fake Job 🚨"
+    else:
+        return "Real Job ✅"
+'''
 # --- Routes ---
 
 @app.route('/signup', methods=['GET', 'POST'])

@@ -3,5 +3,5 @@ flask-sqlalchemy
 flask-login
 flask-bcrypt
 transformers
-torch
+torch==2.0.0+cpu
 gunicorn
