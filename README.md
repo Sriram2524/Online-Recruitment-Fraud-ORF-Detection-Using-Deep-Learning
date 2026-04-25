@@ -49,7 +49,7 @@ cd Online-Recruitment-Fraud-ORF-Detection-Using-Deep-Learning
 
 ### 2. Install Dependencies
 ```bash
-gpip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ### 3. Run the Application
